@@ -24,3 +24,7 @@ def generate_daily_sales():
             "price": product["price"],
             "revenue": revenue
         })
+  sales_df = pd.DataFrame(rows)
+
+  return sales df
+
