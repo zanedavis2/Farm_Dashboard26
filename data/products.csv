@@ -1,7 +1,7 @@
-product_id,product_name,category,variety,package_size,unit,price,min_daily_kg,max_daily_kg
+product_id,product_name,category,variety,package_size,unit,price,min_daily_units,max_daily_units
 
-BUT_LG,Butter,Butter,Classic,.075,kg,8,40,80
-BUT_SM,Butter,Butter,Classic,.25,kg,8,40,80
+BUT_LG,Butter,Butter,Classic,.075,kg,8,20,80
+BUT_SM,Butter,Butter,Classic,.25,kg,8,30,80
 CHS_MAT,Sharp Cheese,Cheese,Mature,.3,kg,13,30,70
 CHS_MLD,Mild Cheese,Cheese,Mild,.3,kg,13,30,70
 YOG,Yogurt,Yogurt,Classic,1,Quart,4,25,50
