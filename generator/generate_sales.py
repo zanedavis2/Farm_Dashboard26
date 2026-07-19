@@ -28,5 +28,5 @@ def generate_daily_sales():
         })
   sales_df = pd.DataFrame(rows)
 
-  return sales df
+  return sales_df
 
