@@ -10,9 +10,9 @@ def generate_daily_sales():
   rows = []
   today = date.today()
   for _, product in products.iterrows():
-    kg_sold = random.randint(
-            int(product["min_daily_kg"]),
-            int(product["max_daily_kg"])
+    quantity = random.randint(
+            int(product["min_daily_units"]),
+            int(product["max_daily_units"])
         )
     revenue = round(kg_sold * product["price"], 2)
     rows.append({
@@ -20,7 +20,7 @@ def generate_daily_sales():
             "product_id": product["product_id"],
             "product_name": product["product_name"],
             "category": product["category"],
-            "kg_sold": kg_sold,
+            "quantity": quantity,
             "price": product["price"],
             "revenue": revenue
         })
