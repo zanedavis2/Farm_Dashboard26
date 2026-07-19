@@ -1,1 +1,21 @@
+product_id,product_name,category,variety,package_size,unit,price,min_daily_kg,max_daily_kg
+
+BUT,Butter,Butter,Classic,.2,kg,8,40,80
+CHS_MAT,Mature Cheese,Cheese,Mature,.3,kg,13,30,70
+CHS_MLD,Mild Cheese,Cheese,Mild,.3,kg,13,30,70
+YOG,Yogurt,Yogurt,Classic,1,Quart,4,25,50
+YOG,Yogurt,Yogurt,Classic,1,Cup,2,25,50
+ICE_VAN_1,Vanilla Ice Cream,Ice Cream,Vanilla,1,Quart,6,45,120
+ICE_VAN_2,Vanilla Ice Cream,Ice Cream,Vanilla,1,Cup,2.5,45,120
+ICE_CHOC_1,Chocolate Ice Cream,Ice Cream,Chocolate,1,Quart,6,45,120
+ICE_CHOC_2,Chocolate Ice Cream,Ice Cream,Chocolate,1,Cup,2.5,45,120
+ICE_STRW_1,Strawberry Ice Cream,Ice Cream,Strawberry,1,Quart,6,45,120
+ICE_STRW_2,Strawberry Ice Cream,Ice Cream,Strawberry,1,Cup,2.5,45,120
+ICE_MOC_1,Mocha Ice Cream,Ice Cream,Mocha,1,Quart,6,45,120
+ICE_MOC_2,Mocha Ice Cream,Ice Cream,Mocha,1,Cup,2.5,45,120
+
+
+
+
+
 
