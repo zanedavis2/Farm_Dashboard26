@@ -14,7 +14,9 @@ def generate_daily_sales():
             int(product["min_daily_units"]),
             int(product["max_daily_units"])
         )
-    revenue = round(kg_sold * product["price"], 2)
+    
+    revenue = round(quantity * product["price"], 2)
+    
     rows.append({
             "sale_date": today,
             "product_id": product["product_id"],
