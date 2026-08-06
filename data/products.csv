@@ -1,19 +1,20 @@
-product_id,product_name,category,variety,package_size,unit,price,min_daily_units,max_daily_units
-
-BUT_LG,Butter,Butter,Classic,.075,kg,8,20,80
-BUT_SM,Butter,Butter,Classic,.25,kg,8,30,80
-CHS_MAT,Sharp Cheese,Cheese,Mature,.3,kg,13,30,70
-CHS_MLD,Mild Cheese,Cheese,Mild,.3,kg,13,30,70
-YOG,Yogurt,Yogurt,Classic,1,Quart,4,25,50
-YOG,Yogurt,Yogurt,Classic,1,Cup,2,25,50
-ICE_VAN_1,Vanilla Ice Cream,Ice Cream,Vanilla,1,Quart,6,45,120
-ICE_VAN_2,Vanilla Ice Cream,Ice Cream,Vanilla,1,Cup,2.5,45,120
-ICE_CHOC_1,Chocolate Ice Cream,Ice Cream,Chocolate,1,Quart,6,45,120
-ICE_CHOC_2,Chocolate Ice Cream,Ice Cream,Chocolate,1,Cup,2.5,45,120
-ICE_STRW_1,Strawberry Ice Cream,Ice Cream,Strawberry,1,Quart,6,45,120
-ICE_STRW_2,Strawberry Ice Cream,Ice Cream,Strawberry,1,Cup,2.5,45,120
-ICE_MOC_1,Mocha Ice Cream,Ice Cream,Mocha,1,Quart,6,45,120
-ICE_MOC_2,Mocha Ice Cream,Ice Cream,Mocha,1,Cup,2.5,45,120
+product_id,product_name,category,variety,package_size,unit,price,preferred_season
+BUT_LG,Butter (Block),Butter,Classic,.075,kg,8,All
+BUT_SM,Butter (Stick) ,Butter,Classic,.25,kg,8,All
+CHS_MAT,Sharp Cheese,Cheese,Mature,.3,kg,8,All
+CHS_MLD,Mild Cheese,Cheese,Mild,.3,kg,8,All
+YOG_Q,Yogurt (Quart),Yogurt,Classic,1,Quart,4,All
+YOG_C,Yogurt (Cup),Yogurt,Classic,1,Cup,4,Summer
+ICE_VAN_Q,Vanilla Ice Cream (Quart),Ice Cream,Vanilla,1,Quart,6,Summer
+ICE_VAN_C,Vanilla Ice Cream (Cup),Ice Cream,Vanilla,1,Cup,3,Summer
+ICE_CHOC_Q,Chocolate Ice Cream (Quart),Ice Cream, Chocolate,1,Quart,6,Summer
+ICE_CHOC_C, Chocolate Ice Cream (Cup),Ice Cream, Chocolate,1,Cup,3,Summer
+ICE_STRW_Q,Strawberry Ice Cream (Quart),Ice Cream, Strawberry,1,Quart,6,Summer
+ICE_STRW_C, Strawberry Ice Cream (Cup),Ice Cream, Strawberry,1,Cup,3,Summer
+ICE_MOC_Q,Mocha Ice Cream (Quart),Ice Cream, Mocha,1,Quart,6,Summer
+ICE_MOC_C, Mocha Ice Cream (Cup),Ice Cream, Mocha,1,Cup,3,Summer
+JAM_BLK, Blackberry Jam, Jam, Blackberry, 1, Jar, 5,Fall
+JAM_RAZ, Raspberry Jam, Jam, Raspberry, 1, Jar, 5,Fall
 
 
 

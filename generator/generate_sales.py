@@ -1,32 +1,56 @@
-import random
-from datetime import date
-
 import pandas as pd
+import numpy as np
+
+from generator.demand_model import (
+    calculate_product_demand
+)
 
 
-products = pd.read_csv("data/products.csv")
+def generate_sales(
+    calendar,
+    weather,
+    products,
+    behavior
+):
 
-def generate_daily_sales():
-  rows = []
-  today = date.today()
-  for _, product in products.iterrows():
-    quantity = random.randint(
-            int(product["min_daily_units"]),
-            int(product["max_daily_units"])
-        )
-    
-    revenue = round(quantity * product["price"], 2)
-    
-    rows.append({
-            "sale_date": today,
-            "product_id": product["product_id"],
-            "product_name": product["product_name"],
-            "category": product["category"],
-            "quantity": quantity,
-            "price": product["price"],
-            "revenue": revenue
-        })
-  sales_df = pd.DataFrame(rows)
+    sales = []
 
-  return sales_df
 
+    # combine calendar and weather
+    daily_conditions = calendar.merge(
+        weather,
+        on="date"
+    )
+
+
+    product_data = products.merge(
+        behavior,
+        on="product_id"
+    )
+
+
+    for _, day in daily_conditions.iterrows():
+
+        for _, product in product_data.iterrows():
+
+
+            units = calculate_product_demand(
+                product,
+                day
+            )
+
+
+            sales.append(
+                {
+                    "date": day["date"],
+                    "product_id": product["product_id"],
+                    "product_name": product["product_name"],
+                    "category": product["category"],
+                    "units_sold": units,
+                    "price": product["price"],
+                    "revenue": units * product["price"]
+                }
+            )
+
+
+    return pd.DataFrame(sales)

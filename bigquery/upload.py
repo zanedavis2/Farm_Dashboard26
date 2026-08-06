@@ -1,11 +1,9 @@
 from google.cloud import bigquery
 from google.oauth2 import service_account
-
 import config
 
 
 def get_bigquery_client():
-
     credentials = service_account.Credentials.from_service_account_file(
         config.CREDENTIALS_PATH
     )
@@ -17,7 +15,9 @@ def get_bigquery_client():
 
     return client
 
+
 def upload_dataframe(df, table_name):
+
     client = get_bigquery_client()
 
     table_id = (
@@ -26,13 +26,16 @@ def upload_dataframe(df, table_name):
         f"{table_name}"
     )
 
+    job_config = bigquery.LoadJobConfig(
+        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE
+    )
+
     job = client.load_table_from_dataframe(
         df,
-        table_id
-        )
+        table_id,
+        job_config=job_config
+    )
 
     job.result()
 
     print(f"Uploaded {len(df)} rows to {table_name}")
-
-    

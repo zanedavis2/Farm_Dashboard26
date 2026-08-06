@@ -1,0 +1,23 @@
+product_id,avg_daily_units,temperature_sensitivity,rain_sensitivity,season_strength
+BUT_LG,40,low,medium,low
+BUT_SM,50,low,medium,low
+CHS_MAT,35,low, medium,low
+CHS_MLD,40,low, medium,low
+YOG_Q,45,medium, medium,medium
+YOG_C,60,medium, medium,medium
+ICE_VAN_Q,6,high,high,high
+ICE_VAN_C,40,high,high,high
+ICE_CHOC_Q,7,high,high,high
+ICE_CHOC_C,33,high,high,high
+ICE_STRW_Q,12,high,high,high
+ICE_STRW_C,55,high,high,high
+ICE_MOC_Q,7,high,high,medium
+ICE_MOC_C,44,high,high,medium
+JAM_BLK,30,low,medium,high
+JAM_RAZ,30,low,medium,high
+
+
+
+
+
+
