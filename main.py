@@ -1,10 +1,13 @@
 import pandas as pd
+from datetime import date
 
 from generator.generate_calendar import generate_calendar
 from generator.generate_weather import generate_weather
 from generator.generate_sales import generate_sales
 
 from bigquery.upload import upload_dataframe
+from bigquery.upload import date_exists
+
 
 import config
 
@@ -28,8 +31,8 @@ behavior = pd.read_csv(config.BEHAVIOR)
 # ----------------------------
 
 calendar = generate_calendar(
-    START_DATE,
-    END_DATE
+    date.today(),
+    date.today()
 )
 
 
@@ -64,6 +67,16 @@ print(
     f"Generated {len(sales)} sales rows"
 )
 
+
+# ----------------------------
+# Avoid Duplicates
+# ----------------------------
+
+today = date.today()
+
+if date_exists("fact_sales", "date", today):
+    print("Today's sales already exist. Exiting.")
+    quit()
 
 # ----------------------------
 # Upload to BigQuery

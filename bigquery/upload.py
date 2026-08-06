@@ -27,7 +27,7 @@ def upload_dataframe(df, table_name):
     )
 
     job_config = bigquery.LoadJobConfig(
-        write_disposition=bigquery.WriteDisposition.WRITE_TRUNCATE
+        write_disposition=bigquery.WriteDisposition.WRITE_APPEND
     )
 
     job = client.load_table_from_dataframe(
@@ -39,3 +39,30 @@ def upload_dataframe(df, table_name):
     job.result()
 
     print(f"Uploaded {len(df)} rows to {table_name}")
+
+
+def date_exists(table_name, date_column, check_date):
+
+    client = get_bigquery_client()
+
+    query = f"""
+    SELECT COUNT(*) AS cnt
+    FROM `{config.PROJECT_ID}.{config.DATASET_ID}.{table_name}`
+    WHERE {date_column} = @check_date
+    """
+
+    job_config = bigquery.QueryJobConfig(
+        query_parameters=[
+            bigquery.ScalarQueryParameter(
+                "check_date",
+                "DATE",
+                check_date
+            )
+        ]
+    )
+
+    results = client.query(query, job_config=job_config).result()
+
+    count = list(results)[0].cnt
+
+    return count > 0
