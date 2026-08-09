@@ -11,24 +11,19 @@ from bigquery.upload import date_exists
 
 import config
 
-# ----------------------------
-# Configuration
-# ----------------------------
+# Configuration #
 
 START_DATE = config.START_DATE
 END_DATE = config.END_DATE
 
 
-# ----------------------------
-# Load Product Data
-# ----------------------------
+# Load Product Data #
 
 products = pd.read_csv(config.PRODUCTS)
 behavior = pd.read_csv(config.BEHAVIOR)
 
-# ----------------------------
-# Generate calendar
-# ----------------------------
+
+# Generate Calendar #
 
 calendar = generate_calendar(
     date.today(),
@@ -36,9 +31,7 @@ calendar = generate_calendar(
 )
 
 
-# ----------------------------
 # Generate weather
-# ----------------------------
 
 weather = generate_weather(
     calendar
@@ -68,9 +61,7 @@ print(
 )
 
 
-# ----------------------------
 # Avoid Duplicates
-# ----------------------------
 
 today = date.today()
 
@@ -78,9 +69,9 @@ if date_exists("fact_sales", "date", today):
     print("Today's sales already exist. Exiting.")
     quit()
 
-# ----------------------------
-# Upload to BigQuery
-# ----------------------------
+
+# Upload to GBQ #
+
 
 upload_dataframe(
     calendar,
